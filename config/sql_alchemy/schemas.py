@@ -1,15 +1,5 @@
-from typing import Optional, Generic, TypeVar
-from pydantic import BaseModel, Field
-from pydantic.generics import GenericModel
-
-T = TypeVar("T")
-
-
-class Response(GenericModel, Generic[T]):
-    code: str
-    status: str
-    message: str
-    result: Optional[T]
+from typing import Optional
+from pydantic import BaseModel
 
 
 class WordSchema(BaseModel):
@@ -17,7 +7,3 @@ class WordSchema(BaseModel):
 
     class Config:
         orm_mode = True
-
-
-class RequestWord(BaseModel):
-    parameter: WordSchema = Field(...)
