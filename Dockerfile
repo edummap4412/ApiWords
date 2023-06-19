@@ -3,6 +3,7 @@ FROM python:3.10.11-slim-buster AS builder
 WORKDIR /app
 RUN pip install --upgrade pip
 RUN pip install poetry
+RUN pip install uvicorn
 RUN poetry config virtualenvs.create false --local
 COPY Dockerfile poetry.lock* pyproject.toml* /app/
 RUN poetry install --no-root
