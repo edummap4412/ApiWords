@@ -9,3 +9,13 @@ services:
       POSTGRES_DB: tdd
     ports:
       - 5432:5432
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn api.main:app --host 0.0.0.0 --reload --port 8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
