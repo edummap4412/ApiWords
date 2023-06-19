@@ -4,7 +4,7 @@ WORKDIR /app
 RUN pip install --upgrade pip
 RUN pip install poetry
 RUN poetry config virtualenvs.create false --local
-COPY  Dockerfile poetry.lock* pyproject.toml* /app/
+COPY Dockerfile poetry.lock* pyproject.toml* /app/
 RUN poetry install --no-root
 COPY . /app/
 
