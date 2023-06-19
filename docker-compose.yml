@@ -1,20 +1,11 @@
 version: '3.8'
 
 services:
-  db:
-    image: postgres
-    environment:
-      POSTGRES_USER: username
-      POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: tdd
-    ports:
-      - 5432:5432
-
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    command: uvicorn api.main:app --host 0.0.0.0 --reload --port 8000
+    command: bash -c "python -m venv venv && source venv/bin/activate && pip install poetry && pip install uvicorn && poetry install && poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000"
     volumes:
       - .:/app
     ports:

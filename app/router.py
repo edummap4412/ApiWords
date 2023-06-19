@@ -1,26 +1,14 @@
-from fastapi import APIRouter, Request, Depends
+from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
-from sqlalchemy.orm import Session
 from helpers.word_treatment import vowel_count, sort_words
-from config.sql_alchemy.config_sql_alchemy import SessionLocal
-from services.word_service import WordsService
 
 router = APIRouter()
 
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-
 @router.post('/vowel_count')
-async def count_vowels(request: Request, db: Session = Depends(get_db)):
+async def count_vowels(request: Request):
     data = await request.json()
     words = data['words']
-    WordsService().save_words(db, words)
 
     result = vowel_count(words)
 
