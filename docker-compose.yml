@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bash -c "python -m venv venv && source venv/bin/activate && pip install poetry && pip install uvicorn && poetry install && poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    command: bash -c "python -m venv venv && source venv/bin/activate && pip install poetry && poetry install && poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000"
     volumes:
       - .:/app
     ports:
