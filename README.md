@@ -1,4 +1,5 @@
 # APIWORDS
+
 Projeto feito para teste de admissão,onde: Neste projeto contém dois endpoints desenvolvidos usando o framework FastAPI. Abaixo está uma descrição de cada um deles.
 
 ___

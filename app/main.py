@@ -9,7 +9,7 @@ app = FastAPI()
 
 
 @app.get('/')
-async def Home():
+async def home():
     return "Welcome Home"
 
 

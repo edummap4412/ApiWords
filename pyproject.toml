@@ -6,13 +6,17 @@ authors = ["edummap4412 <mascarenhaseduardo4412@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10.11"
 pydantic = "^1.10.9"
 uvicorn = "^0.22.0"
 fastapi = "^0.97.0"
 psycopg2 = "^2.9.6"
 httpx = "^0.24.1"
 sqlalchemy = "^2.0.16"
+coverage = "^7.2.7"
+pytest = "^7.3.2"
+coverage-badge = "^1.1.0"
+flake8 = "^6.0.0"
 
 
 [build-system]

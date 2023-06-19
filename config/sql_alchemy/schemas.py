@@ -10,10 +10,13 @@ class Response(GenericModel, Generic[T]):
     status: str
     message: str
     result: Optional[T]
-    
+
 
 class WordSchema(BaseModel):
     word: Optional[str] = None
+
+    class Config:
+        orm_mode = True
 
 
 class RequestWord(BaseModel):

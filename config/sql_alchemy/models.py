@@ -7,4 +7,3 @@ class Words(Base):
 
     id = Column(Integer, primary_key=True)
     word = Column(String)
-

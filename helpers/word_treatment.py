@@ -1,4 +1,3 @@
-import json
 
 
 def vowel_count(words: dict) -> dict:
@@ -10,6 +9,5 @@ def vowel_count(words: dict) -> dict:
     return result
 
 
-def sort_words(words, reverse):
-    reverso = {'words': words[::-1], 'order': 'desc'} if reverse else {'words': words, 'order': 'asc'}
-    return reverso
+def sort_words(words: list, order: str):
+    return words[::-1] if order == 'desc' else words
