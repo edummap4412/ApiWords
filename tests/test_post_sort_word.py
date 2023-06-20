@@ -9,20 +9,19 @@ class SortEndpointTestCase(unittest.TestCase):
     def test_sort_words(self):
         payload = {
             "words": ["banana", "apple", "orange", "grape"],
-            "reverse": False
+            "order": "asc"
         }
-        expected_result = ["apple", "banana", "grape", "orange"]
-
+        expected_result = ['banana', 'apple', 'orange', 'grape']
         response = client.post("api/sort", json=payload)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json()['words'], expected_result)
+        self.assertEqual(response.json(), expected_result)
 
     def test_sort_words_reverse(self):
         payload = {
             "words": ["banana", "apple", "orange", "grape"],
-            "reverse": True
+            "order": "desc"
         }
-        expected_result = ["orange", "grape", "banana", "apple"]
+        expected_result = ['grape', 'orange', 'apple', 'banana']
 
         response = client.post("api/sort", json=payload)
         self.assertEqual(response.status_code, 200)
