@@ -1,15 +1,12 @@
-name: Appwords CI
+name: Appwords CI/CD
 
 on:
   push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    branches: [master]
+
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -21,10 +18,18 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install --upgrade pip && pip install -r requirements.txt
 
       - name: Linting
         run: flake8 --ignore=E501 .
 
       - name: Running tests
         run: python -m unittest discover -s api.tests
+
+      - name: Install Railway
+        run: npm i -g @railway/cli
+
+      - name: Deploy
+        run:  devtomio/action-railway@v1.1.4
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
