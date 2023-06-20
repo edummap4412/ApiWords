@@ -5,5 +5,8 @@ services:
     build: .
     volumes:
       - .:/app
+      - ./helpers:/app/helpers
+      - ./config:/app/config
+      - ./tests:/app/tests
     ports:
       - "8000:8000"
