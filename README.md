@@ -2,6 +2,7 @@
 
 Projeto feito para teste de admissão,onde: Neste projeto contém dois endpoints desenvolvidos usando o framework FastAPI. Abaixo está uma descrição de cada um deles.
 
+## Para iniciar aplicação em produção acesse : [https://apiwords.up.railway.app/docs](https://apiwords.up.railway.app/docs)
 ___
 
 ### Executando o Projeto com Docker
@@ -17,7 +18,7 @@ ___
   * Para iniciar o servidor local do app ```http://localhost:8000```
 
 ---
-## Swagger
+## Swagger local
 [Swagger](http://127.0.0.1:8000/docs)
 
 ---
@@ -47,9 +48,9 @@ A resposta é um objeto JSON contendo a contagem de vogais para cada palavra env
 Exemplo de resposta bem-sucedida:
 ```json
 {
-  "palavra1": 3,
-  "palavra2": 2,
-  "palavra3": 1
+	"hello": 2,
+	"world": 1,
+	"example": 3
 }
 ```
 

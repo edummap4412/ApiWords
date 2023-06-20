@@ -1,4 +1,4 @@
-name: Appwords CI
+name: Appwords CI/CD
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - master
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -21,10 +21,11 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install --upgrade pip && pip install -r requirements.txt
 
       - name: Linting
         run: flake8 --ignore=E501 .
 
       - name: Running tests
         run: python -m unittest discover -s api.tests
+
