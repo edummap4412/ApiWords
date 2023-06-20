@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import JSONResponse
-from helpers.word_treatment import vowel_count, sort_words
-from config.schemas import VowelCountRequest, SortRequest
+from api.helpers.word_treatment import vowel_count, sort_words
+from api.config.schemas import VowelCountRequest, SortRequest
 router = APIRouter()
 
 
