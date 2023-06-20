@@ -1,9 +1,11 @@
-from typing import Optional
+from typing import Optional, List
 from pydantic import BaseModel
 
 
-class WordSchema(BaseModel):
-    word: Optional[str] = None
+class VowelCountRequest(BaseModel):
+    words: List[Optional[str]]
 
-    class Config:
-        orm_mode = True
+
+class SortRequest(BaseModel):
+    words: List[Optional[str]]
+    order: str

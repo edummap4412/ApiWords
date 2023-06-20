@@ -1,6 +1,6 @@
 
 
-def vowel_count(words: dict) -> dict:
+def vowel_count(words: list):
     result = {}
     for word in words:
         vowels = [char for char in word if char.lower() in 'aeiou']

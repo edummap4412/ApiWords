@@ -17,12 +17,12 @@ ___
   * Para iniciar o servidor local do app ```http://localhost:8000```
 
 ---
-##Swagger
+## Swagger
 [Swagger](http://127.0.0.1:8000/docs)
 
 ---
 
-#Endpoints
+# Endpoints
 
 * URL:```http://127.0.0.1:8000/api```
 
@@ -36,8 +36,9 @@ Este endpoint recebe uma lista de palavras e retorna a contagem de vogais em cad
 - Corpo da Requisição (JSON):
 ```json
   {
-    "words": ["palavra1", "palavra2", "palavra3"]
-  } 
+  "words": ["hello", "world", "example"]
+}
+	
 ```
 ### Resposta
 
@@ -62,28 +63,27 @@ Este endpoint recebe uma lista de palavras e um parâmetro opcional reverse para
 - URL: `/sort`
 - Corpo da Requisição (JSON):
 ```json
-  {
-    "words": ["palavra1", "palavra2", "palavra3"]
-  }
+{
+	"words": ["hello", "world", "example"],
+	"order": "asc"
+}
 ```
 
 ### Resposta
 A resposta é um objeto JSON contendo a lista de palavras ordenada de acordo com a configuração de inversão.
 
-Exemplo de resposta bem-sucedida com `reverse = True`:
+Exemplo de resposta bem-sucedida com `order = asc`:
 
 ```json
 {
-  "words": ["palavra3", "palavra2", "palavra1"],
-  "order": "desc"
+	"words": ["hello", "world", "example"]
 }
 ```
-Exemplo de resposta bem-sucedida com `reverse = False`:
+Exemplo de resposta bem-sucedida com `order = desc`:
 
 
 ```json
 {
-  "words": ["palavra1", "palavra2", "palavra3"],
-  "order": "asc"
+	"words": ["example", "world", "hello"]
 }
 ```
