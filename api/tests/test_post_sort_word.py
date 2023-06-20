@@ -1,11 +1,11 @@
 import unittest
 from fastapi.testclient import TestClient
-from app.main import app
+from api.app.main import app
 
 client = TestClient(app)
 
 
-class SortEndpointTestCase(unittest.TestCase):
+class TestSortEndpointTestCase(unittest.TestCase):
     def test_sort_words(self):
         payload = {
             "words": ["banana", "apple", "orange", "grape"],

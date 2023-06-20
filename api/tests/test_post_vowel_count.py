@@ -1,11 +1,11 @@
 import unittest
 from fastapi.testclient import TestClient
-from app.main import app
+from api.app.main import app
 
 client = TestClient(app)
 
 
-class VowelCountEndpointTestCase(unittest.TestCase):
+class TestVowelCountEndpointTestCase(unittest.TestCase):
     def test_count_vowels(self):
         payload = {
             "words": ["banana", "apple", "orange", "grape"]
