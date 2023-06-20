@@ -2,11 +2,8 @@ version: '3.8'
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: bash -c "python -m venv venv && source venv/bin/activate && pip install poetry && pip install uvicorn && poetry install && poetry run uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    build: .
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - 8000:8000
