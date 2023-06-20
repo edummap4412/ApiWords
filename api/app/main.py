@@ -7,6 +7,11 @@ from fastapi.openapi.utils import get_openapi
 app = FastAPI()
 
 
+@app.get('/')
+async def home():
+    return "Seja Bem Vindo!!"
+
+
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html():
     openapi_url = app.openapi_url
