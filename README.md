@@ -14,17 +14,7 @@ ___
   ```shell
     $ docker-compose up
   ```
-  * Para iniciar o servidor local do app ``` uvicorn app.main:app --reload```
-
-### Executando o Projeto sem Docker
-  * Instale as dependências:
-  ```shell
-  $ poetry install
-  ```
-  * Inicie o servidor de desenvolvimento:
-  ```shell
-  $ poetry run uvicorn app.main:app --reload
-  ```
+  * Para iniciar o servidor local do app ```http://localhost:8000```
 
 ---
 ##Swagger
