@@ -23,7 +23,6 @@ async def words_sorted(request: Request):
         raise HTTPException(status_code=415, detail="Content-Type deve ser application/json")
 
     data = await request.json()
-
     order = data['order']
     if order not in ('asc', 'desc'):
         return JSONResponse(content="Para alterar a ordem dos elementos digite asc ou desc")
