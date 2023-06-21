@@ -26,7 +26,10 @@ ___
 
 # Endpoints
 
-* URL:```http://127.0.0.1:8000/api```
+## URLS para test no Innsominia, Postman e etc..
+
+ * URL LOCAL:```http://127.0.0.1:8000/api```
+ * URL PRODUCTION: `https://apiwords.up.railway.app/api`
 
 ### `/vowel_count`
 Este endpoint recebe uma lista de palavras e retorna a contagem de vogais em cada palavra. As palavras são enviadas no corpo da requisição em formato JSON.
