@@ -44,5 +44,5 @@ def validate_words(value):
         ValueError: Se o valor não for uma lista válida de strings.
     """
     if not isinstance(value, list) or not all(isinstance(word, str) for word in value):
-        raise ValueError("Value is not a valid list of strings")
+        raise ValueError("O valor não é uma lista válida de strings")
     return value
