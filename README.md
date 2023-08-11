@@ -1,7 +1,7 @@
 # APIWORDS  
 ![Coverage](coverage.svg)
 
-Projeto feito para teste de admissão,onde: Neste projeto contém dois endpoints desenvolvidos usando o framework FastAPI. Abaixo está uma descrição de cada um deles.
+Neste projeto contém dois endpoints desenvolvidos usando o framework FastAPI. Abaixo está uma descrição de cada um deles.
 
 ## Para iniciar aplicação em produção acesse : [https://apiwords.up.railway.app/docs](https://apiwords.up.railway.app/docs)
 ___
